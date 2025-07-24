@@ -23,6 +23,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
+  text-align: center;
 }
 
 
@@ -124,6 +125,20 @@ model-viewer.alinear {
 
 .hotspot[slot="hotspot-manilla"] {
   --min-hotspot-opacity: 0;
+  background-color: #e0119d;
+}
+.hotspot[slot="hotspot-manometro"] {
+  --min-hotspot-opacity: 0;
+  background-color: #e0119d;
+}
+.hotspot[slot="hotspot-cilindro"] {
+  --min-hotspot-opacity: 0;
+  background-color: #e0119d;
+}
+.hotspot[slot="hotspot-pasador"] {
+  --min-hotspot-opacity: 1;
+  /* cuando el pasador esté “delante” (max), lo oculto */
+  --max-hotspot-opacity: 0;;
   background-color: #e0119d;
 }
 

@@ -20,7 +20,12 @@
   </head>
   <body>
     <div class="alinear">
-      <h1 class="lato-regular">Partes de un extintor</h1>
+      <div>
+        <h1 class="lato-regular">Partes de un extintor</h1>
+        <p class="lato-regular">
+          Gira el extintor para descubrir los nombres de todas sus partes
+        </p>
+      </div>
     </div>
 
     <model-viewer
@@ -43,15 +48,41 @@
         class="hotspot lato-regular"
         slot="hotspot-boquilla"
         data-position="-1.2 0.8 0"
-        data-normal="0 0 1"      >
+        data-normal="0 0 1"
+      >
         <div class="annotation">Boquilla</div>
       </button>
       <button
         class="hotspot lato-regular"
         slot="hotspot-manilla"
-        data-position="0 5.3 0"
-        data-normal="0 0 1"      >
-        <div class="annotation">Manilla</div>
+        data-position="0.5 5.5 0"
+        data-normal="0 0 1"
+      >
+        <div class="annotation">Palanca activadora</div>
+      </button>
+      <button
+        class="hotspot lato-regular"
+        slot="hotspot-manometro"
+        data-position="0.1 4.9 0.3"
+        data-normal="0 0 1"
+      >
+        <div class="annotation">Manómetro</div>
+      </button>
+      <button
+        class="hotspot lato-regular"
+        slot="hotspot-cilindro"
+        data-position="0.6 2 0"
+        data-normal="0 0 1"
+      >
+        <div class="annotation">Cilindro</div>
+      </button>
+      <button
+        class="hotspot lato-regular"
+        slot="hotspot-pasador"
+        data-position="0 5.2 -0.3"
+        data-normal="0 0 1"
+      >
+        <div class="annotation">Pasador de seguridad</div>
       </button>
     </model-viewer>
 
