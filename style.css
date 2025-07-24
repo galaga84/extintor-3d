@@ -10,28 +10,27 @@ html, body {
   align-items: center;
 }
 
-/* Si tienes un <canvas> */
-canvas {
-  background: #fff;
-  border: 2px solid #000;
-  max-width: 100%;
-  height: auto;
-}
+/* Pantalla completa en móviles */
+@media (max-width: 768px) {
+  html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;    /* oculta scroll */
+  }
 
-/* Haz que el model-viewer sea 100% del contenedor y limite su ancho */
-model-viewer {
-  width: 100%;           /* antes tenías width: 100; falta la unidad */
-  max-width: 600px;      /* ajusta al máximo que te interese */
-  height: auto;          /* deja que el alto sea proporcional */
-  aspect-ratio: 1 / 1;   /* mantiene proporción cuadrada */
-  touch-action: none;    /* para que siga capturando drag/pinch */
-}
-
-/* Opcional: ajustes extra en pantallas muy pequeñas */
-@media (max-width: 400px) {
   model-viewer {
-    max-width: 100vw;
-    height: 80vw;        /* 80% del ancho de pantalla */
+    position: fixed;
+    inset: 0;            /* top:0; right:0; bottom:0; left:0 */
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;    /* sin bordes redondeados */
+    box-shadow: none;    /* quita sombra si la había */
+    background: transparent;
   }
 }
+
 
