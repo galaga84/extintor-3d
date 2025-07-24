@@ -20,16 +20,40 @@
   </head>
   <body>
     <div class="alinear">
-      <h1 class="lato-regular">Visor 3d de Extintor</h1>
+      <h1 class="lato-regular">Partes de un extintor</h1>
     </div>
-    
-    <model-viewer class="alinear"
+
+    <model-viewer
+      class="alinear"
       alt="Extintor"
       src="./3d-extintor/Sin_nombre.glb"
       shadow-intensity="1"
       camera-controls
       touch-action="pan-y"
-    ></model-viewer>
+    >
+      <button
+        class="hotspot lato-regular"
+        slot="hotspot-visor"
+        data-position="-1.4 2.75 0"
+        data-normal="0 0 1"
+      >
+        <div class="annotation">Manguera</div>
+      </button>
+      <button
+        class="hotspot lato-regular"
+        slot="hotspot-boquilla"
+        data-position="-1.2 0.8 0"
+        data-normal="0 0 1"      >
+        <div class="annotation">Boquilla</div>
+      </button>
+      <button
+        class="hotspot lato-regular"
+        slot="hotspot-manilla"
+        data-position="0 5.3 0"
+        data-normal="0 0 1"      >
+        <div class="annotation">Manilla</div>
+      </button>
+    </model-viewer>
 
     <script
       type="module"

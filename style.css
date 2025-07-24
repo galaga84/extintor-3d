@@ -5,7 +5,8 @@
 }
 
 /* Cuerpo y html llenan toda la pantalla y centran el contenido */
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   background: #fff;
@@ -24,22 +25,21 @@ html, body {
   margin-top: 1rem;
 }
 
-/* Título con Lato */
+
 h1.lato-regular {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: #4f0b7b;
 }
 
-/* Estilos para el visor 3D */
 model-viewer.alinear {
   width: 100vw;
   height: 100vh;
-  aspect-ratio: 1 / 1;     /* mantiene proporción cuadrada */
+  aspect-ratio: 1 / 1; /* mantiene proporción cuadrada */
   margin: 1rem 0;
-  touch-action: none;      /* captura todos los gestos */
+  touch-action: none; /* captura todos los gestos */
   pointer-events: auto;
   display: block;
-  background: #fff;  /* transparente para ver el fondo */
+  background: #fff; /* transparente para ver el fondo */
   cursor: grab;
 }
 
@@ -103,6 +103,39 @@ model-viewer.alinear {
   font-style: italic;
 }
 
+.hotspot {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: blue;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.hotspot[slot="hotspot-visor"] {
+  --min-hotspot-opacity: 0;
+  background-color: #e0119d;
+}
+.hotspot[slot="hotspot-boquilla"] {
+  --min-hotspot-opacity: 0;
+  background-color: #e0119d;
+}
 
+.hotspot[slot="hotspot-manilla"] {
+  --min-hotspot-opacity: 0;
+  background-color: #e0119d;
+}
 
+.annotation {
+  background-color: #b6b6b6;
+  position: absolute;
+  transform: translate(10px, 10px);
+  border-radius: 10px;
+  padding: 10px;
+}
 
+/* This keeps child nodes hidden while the element loads */
+:not(:defined) > * {
+  display: none;
+}
