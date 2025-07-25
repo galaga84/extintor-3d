@@ -28,18 +28,20 @@
       </div>
     </div>
 
-    <model-viewer
-      class="alinear"
-      alt="Extintor"
-      ar
-      camera-controls
-      touch-action="pan-y"
-      auto-rotate
-      src="./3d-extintor/Sin_nombre.glb"
-      shadow-intensity="1"
-      camera-controls
-      touch-action="pan-y"
-    >
+   <model-viewer
+  class="alinear"
+  id="reveal"
+  loading="eager"
+  alt="Extintor"
+  src="./3d-extintor/Extintor.glb"
+  poster="./poster.webp"
+  ar
+  ar-modes="scene-viewer webxr quick-look"
+  auto-rotate
+  camera-controls
+  touch-action="pan-y"
+  shadow-intensity="1"
+>
       <button
         slot="ar-button"
         style="
@@ -51,7 +53,7 @@
           right: 16px;
         "
       >
-        👋 Activar AR
+        📷 Activar AR
       </button>
       <button
         class="hotspot lato-regular"
@@ -102,31 +104,39 @@
         <div class="annotation">Pasador de seguridad</div>
       </button>
     </model-viewer>
-    <div id="joystick-zone" style="position: fixed; bottom: 40px; left: 40px; width: 150px; height: 150px;"></div>
-<script>
-  const modelViewer = document.querySelector('model-viewer');
-  let currentY = 0;
+    <div
+      id="joystick-zone"
+      style="
+        position: fixed;
+        bottom: 40px;
+        left: 40px;
+        width: 150px;
+        height: 150px;
+      "
+    ></div>
+    <script>
+      const modelViewer = document.querySelector("model-viewer");
+      let currentY = 0;
 
-  const joystick = nipplejs.create({
-    zone: document.getElementById('joystick-zone'),
-    mode: 'static',
-    position: { left: '50%', top: '50%' },
-    color: 'black'
-  });
+      const joystick = nipplejs.create({
+        zone: document.getElementById("joystick-zone"),
+        mode: "static",
+        position: { left: "50%", top: "50%" },
+        color: "black",
+      });
 
-  joystick.on('move', (evt, data) => {
-    if (data && data.vector) {
-      // Ajusta la sensibilidad aquí
-      currentY += data.vector.x * 0.05;
-      modelViewer.rotation = `0 ${currentY} 0`;
-    }
-  });
+      joystick.on("move", (evt, data) => {
+        if (data && data.vector) {
+          // Ajusta la sensibilidad aquí
+          currentY += data.vector.x * 0.05;
+          modelViewer.rotation = `0 ${currentY} 0`;
+        }
+      });
 
-  joystick.on('end', () => {
-    // Puedes detener el movimiento o hacer algo aquí si lo deseas
-  });
-</script>
-
+      joystick.on("end", () => {
+        // Puedes detener el movimiento o hacer algo aquí si lo deseas
+      });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.9.0/nipplejs.min.js"></script>
 
